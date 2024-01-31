@@ -17,6 +17,7 @@
                     ID="chkAvanzado" CssClass="" runat="server"
                     autopostback="true"
                     OncheckedChanged="ckdAvanzado_CheckedChanged"/>
+                <asp:Button Text="Limpiar filtros" ID="btnLimpiarFiltros" OnClick="btnLimpiarFiltros_Click" CssClass="btn btn-outline-primary" runat="server" />
             </div>
         </div>
     </div>

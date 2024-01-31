@@ -66,8 +66,17 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="DetallePokemon.aspx" />
+    <Content Include="EnvioEmail.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="LoginPage1.aspx" />
+    <Content Include="LoginPage2Admin.aspx" />
+    <Content Include="MenuLogin.aspx" />
+    <Content Include="MiPerfil.aspx" />
+    <Content Include="MisFavoritos.aspx" />
     <Content Include="PokemonsLista.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
     <Content Include="FormularioPokemon.aspx" />
   </ItemGroup>
@@ -86,8 +95,43 @@
     <Compile Include="DetallePokemon.aspx.designer.cs">
       <DependentUpon>DetallePokemon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EnvioEmail.aspx.cs">
+      <DependentUpon>EnvioEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnvioEmail.aspx.designer.cs">
+      <DependentUpon>EnvioEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage1.aspx.cs">
+      <DependentUpon>LoginPage1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage1.aspx.designer.cs">
+      <DependentUpon>LoginPage1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage2Admin.aspx.cs">
+      <DependentUpon>LoginPage2Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage2Admin.aspx.designer.cs">
+      <DependentUpon>LoginPage2Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
@@ -95,6 +139,27 @@
     </Compile>
     <Compile Include="Master.Master.designer.cs">
       <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MenuLogin.aspx.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuLogin.aspx.designer.cs">
+      <DependentUpon>MenuLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisFavoritos.aspx.cs">
+      <DependentUpon>MisFavoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisFavoritos.aspx.designer.cs">
+      <DependentUpon>MisFavoritos.aspx</DependentUpon>
     </Compile>
     <Compile Include="PokemonsLista.aspx.cs">
       <DependentUpon>PokemonsLista.aspx</DependentUpon>
@@ -111,6 +176,14 @@
     <Compile Include="FormularioPokemon.aspx.designer.cs">
       <DependentUpon>FormularioPokemon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
@@ -124,6 +197,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

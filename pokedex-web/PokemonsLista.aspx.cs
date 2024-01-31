@@ -14,14 +14,18 @@ namespace pokedex_web
         public bool FiltroAvanzado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!(Seguridad.esAdmin(Session["trainee"])))
+            {
+                Session.Add("error", "Se requieren permisos de admin para acceder a esta pantalla");
+                Response.Redirect("Error.aspx");
+            }
+
             FiltroAvanzado = chkAvanzado.Checked;
 
             if (!IsPostBack)
             {
-                PokemonNegocio negocio = new PokemonNegocio();
-                Session.Add("listaPokemons", negocio.listarConSP());
-                dgvPokemons.DataSource = Session["listaPokemons"];
-                dgvPokemons.DataBind();
+                cargarDatosDGV();
             }
 
         }
@@ -36,8 +40,16 @@ namespace pokedex_web
         protected void dgvPokemons_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             dgvPokemons.PageIndex = e.NewPageIndex;
-            dgvPokemons.DataBind();
+            cargarDatosDGV();
 
+        }
+
+        private void cargarDatosDGV()
+        {
+            PokemonNegocio negocio = new PokemonNegocio();
+            Session.Add("listaPokemons", negocio.listarConSP());
+            dgvPokemons.DataSource = Session["listaPokemons"];
+            dgvPokemons.DataBind();
         }
 
         protected void txtFiltro_TextChanged(object sender, EventArgs e)
@@ -57,6 +69,7 @@ namespace pokedex_web
 
         protected void ddlCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             ddlCriterio.Items.Clear();
             if (ddlCampo.SelectedItem.ToString() == "Número")
             {
@@ -87,8 +100,19 @@ namespace pokedex_web
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex);
-                throw;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx");
+            }
+        }
+
+        protected void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            if (txtFiltro.Enabled == !FiltroAvanzado)
+            {
+                txtFiltro.Text = "";
+                txtFiltroAvanzado.Text = "";
+                dgvPokemons.DataSource = Session["listaPokemons"];
+                dgvPokemons.DataBind();
             }
         }
     }

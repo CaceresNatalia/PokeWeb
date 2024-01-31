@@ -267,9 +267,9 @@ namespace negocio
                 }
 
                 if (estado == "Activo")
-                    consulta += "P.Activo = 1";
+                    consulta += " and P.Activo = 1";
                 else if (estado == "Inactivo")
-                    consulta += "P.Activo = 0";
+                    consulta += " and P.Activo = 0";
 
                 datos.setearConsulta(consulta);
                 datos.ejecutarLectura();
